@@ -498,7 +498,8 @@ const kittyPrompts = {
     // Return an array of just the names of kitties who are orange e.g.
     // ['Tiger', 'Snickers']
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = kitties.filter( (kitten) => kitten.color === 'orange'
+    ).map( (kitten) => kitten.name);
     return result;
 
     // Annotation:
@@ -508,7 +509,9 @@ const kittyPrompts = {
   sortByAge() {
     // Sort the kitties by their age
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = kitties.sort( (a, b) => {
+      return a.age < b.age;
+    });
     return result;
 
     // Annotation:
@@ -528,7 +531,11 @@ const kittyPrompts = {
     //   color: 'orange'
     // },
     // ...etc]
-  };
+    const result = kitties.filter( (kitten) => kitten.age > 2)
+
+    return result;
+  
+  }
 };
 
 
@@ -546,7 +553,7 @@ const kittyPrompts = {
 
 
 
-// DATASET: bosses, sidekicks from ./datasets/bosses
+// DATASET: astronomy
 const astronomyPrompts = {
   starsInConstellations() {
     // Return an array of all the stars that appear in any of the constellations
@@ -563,8 +570,18 @@ const astronomyPrompts = {
     //     lightYearsFromEarth: 640,
     //     color: 'red' }
     // ]
+    const keys = Object.keys(constellations);
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = stars.reduce( (starArr, star) => {
+      const stars = keys.reduce( (arr, key) => {
+          if (constellations[key].stars.indexOf(star.name) !== -1) {
+            arr.push(star)
+          }
+          return arr;
+        }, [])
+      starArr = starArr.concat(stars);
+      return starArr;
+    }, [])
     return result;
 
     // Annotation:
@@ -582,7 +599,10 @@ const astronomyPrompts = {
     //   red: [{obj}]
     // }
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = stars.reduce( (obj, star) => {
+      (!obj[star.color]) ? obj[star.color] = [star] : obj[star.color].push(star);
+      return obj;
+    }, {});
     return result;
 
     // Annotation:
@@ -602,7 +622,7 @@ const astronomyPrompts = {
     //   'Orion',
     //   'Centaurus' ]
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = stars.map( (star) => star.constellation);
     return result;
 
     // Annotation:

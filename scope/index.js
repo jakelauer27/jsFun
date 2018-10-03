@@ -38,7 +38,6 @@ const scope = {
 
     return result;
 
-<<<<<<< HEAD
     // Annotation: 
     // First we declare variables scoped to the ExerciseA function. 
     // Then we define a changePerson function.
@@ -53,7 +52,6 @@ const scope = {
     // Then we log personB which is still cardiB.
     // Then the changePerson function finishes.
     // Now we finish the exerciseA function by logging person C which is Paul 
-=======
     // Annotation:
     // Write your annotation here as a comment
   },
@@ -85,7 +83,13 @@ const scope = {
 
     // Log D: number
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [
+      {'A': 75},
+      {'B': 64},
+      {'C': 64},
+      {'D': 30}
+    ]
+      
     return result;
 
     // Annotation:
@@ -153,7 +157,12 @@ const scope = {
 
     // Log D: greeting
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [
+      {'A': 'hi'},
+      {'B': 'welcome'},
+      {'C': 'welcome'},
+      {'D': 'howdy'}
+    ];
     return result;
 
     // Annotation:
@@ -185,7 +194,12 @@ const scope = {
 
     // Log D: name
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result =  [
+      {'A': 'Nathaniel'},
+      {'B': 'Nathaniel'},
+      {'C': 'Brittany'},
+      {'D': 'Brittany'}
+    ];
     return result;
 
     // Annotation:
@@ -220,7 +234,13 @@ const scope = {
 
     // Log E: dog
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [
+      {'A': 'Spot'},
+      {'B': 'Spot'},
+      {'C': 'Biscuit'},
+      {'D': 'Biscuit'},
+      {'E': 'Biscuit'}
+    ];
     return result;
 
     // Annotation:
@@ -250,7 +270,12 @@ const scope = {
 
     // Log D: fruit
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [
+      {'A': undefined},
+      {'B': 'mango'},
+      {'C': 'mango'},
+      {'D': 'apple'}
+    ];
     return result;
 
     // Annotation:
@@ -290,7 +315,13 @@ const scope = {
 
     fn1();
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [
+      {'A': 4},
+      {'B': 9},
+      {'C': 4},
+      {'D': 9},
+      {'E': 10}
+    ];
     return result;
 
     // Annotation:
@@ -321,7 +352,13 @@ const scope = {
     eatSnack();
     // Log E: hunger
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [
+      {'A': 75},
+      {'B': 0},
+      {'C': 75},
+      {'D': 80},
+      {'E': 55}
+    ];
     return result;
 
     // Annotation:
@@ -362,7 +399,14 @@ const scope = {
     // Log E: sandwich
     // Log F: amandaBynes
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [
+      {'A': 'ketchup sandwhich'},
+      {'B': undefined},
+      {'C': 'not a mediocre sandwhich'},
+      {'D': 'gouda'},
+      {'E': 'not a mediocre sandwhich'},
+      {'F': 'National Treasure'}
+    ];
     return result;
 
     // Annotation:
@@ -383,7 +427,10 @@ const scope = {
 
     // Log B: num
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [
+      {'A': 7},
+      {'B': 7}
+    ];
     return result;
 
     // Annotation:
@@ -415,7 +462,11 @@ const scope = {
 
     // Log C: grade
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [
+      {'A': 95},
+      {'B': 90},
+      {'C': 90}
+    ];
     return result;
 
     // Annotation:
@@ -441,7 +492,12 @@ const scope = {
 
     // Log D: num
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [
+      {'A': 5},
+      {'B': 6},
+      {'C': undefined},
+      {'D': 6}
+    ];
     return result;
 
     // Annotation:
@@ -480,7 +536,14 @@ const scope = {
 
     // Log F: instructor
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [
+      {'A': 'Pam'},
+      {'B': 'Pam'},
+      {'C': 'Louisa'},
+      {'D': 'Louisa'},
+      {'E': 'Pam'},
+      {'F': 'Louisa'}
+    ];
     return result;
 
     // Annotation:
@@ -499,12 +562,15 @@ const scope = {
     putOnShoe();
     // Log C: shoe
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [
+      {'A': undefined},
+      {'B': 'flipflop'},
+      {'C': 'flipflop'}
+    ];
     return result;
 
     // Annotation:
     // Write your annotation here as a comment
->>>>>>> ba2d5e174fc89716e1b3275b9bcbb917022f2bd6
   }
 }
 

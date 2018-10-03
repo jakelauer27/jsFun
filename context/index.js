@@ -16,7 +16,7 @@ const context = {
 
 
     // What is the value of `this` when we call ship.fly()?
-    const result = 'instance of ship';
+    const result = 'ship';
     return result;
 
     // Annotation:
@@ -32,7 +32,7 @@ const context = {
     }
     
     // What is the value of `this` when we call fn()?
-    const result = 'window';
+    const result = 'context';
     return result;
 
     // Annotation:
@@ -72,11 +72,11 @@ const context = {
 
 
     // What is the value of `this` when we call dog.getBreed()?
-    const result = 'dog';
+    const result = 'context';
     return result;
 
     // Annotation: 
-    // Write your annotation here as a comment
+    // Because it is a function within a method it doesn't know what this is so it defaults to window (context)
   },
 
   exerciseE() {
@@ -88,7 +88,7 @@ const context = {
 
 
     // What is the value of `this` when we call fn()?
-    const result = 'window';
+    const result = 'context';
     return result;
 
     // Annotation: 
@@ -139,7 +139,7 @@ const context = {
 
 
     // What is the value of `this` when we call monopoly.restart()?
-    const result = 'monopoly';
+    const result = 'context';
     return result;
 
     // Annotation: 
@@ -180,7 +180,7 @@ const context = {
     }, poets)
 
     // What is the value of `this` that gets returned on each iteration of poets.map()?
-    const result = 'window';
+    const result = 'context';
     return result;
 
     // Annotation: 
@@ -193,7 +193,7 @@ const context = {
     });
 
     // What is the value of `this` when a user clicks on our #btn element and the callback is triggered?
-    const result = 'window';
+    const result = 'context';
     return result;
 
     // Annotation: 
