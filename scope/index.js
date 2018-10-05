@@ -39,21 +39,15 @@ const scope = {
     return result;
 
     // Annotation: 
-    // First we declare variables scoped to the ExerciseA function. 
-    // Then we define a changePerson function.
-    // Then we skip down to where the function is called.
-    // In the change Person function we define a global variable called person and set it to "CardiB"
-    // Then we invoke beautify function.
-    // In this function we log person b first. The value is "Ben".
-    // Then we set person B to CardiB and personC to person B. 
-    // Then we log person C which is now CardiB.
-    // Now that the beautify function has finished we go back to the of the changeperson function.
-    // Here we set person C to personA ('Paul')
-    // Then we log personB which is still cardiB.
-    // Then the changePerson function finishes.
-    // Now we finish the exerciseA function by logging person C which is Paul 
-    // Annotation:
-    // Write your annotation here as a comment
+    // First we declare three vars and assign them to 'paul' 'ben' and 'tom'.
+    // Then we declare funct changePerson
+    // Then we invoke change person. The intepreter hoists the beautifyPerson function declaration.
+    // Then the conditional inside change person evaluates to true so then we set 
+    // a new global var person equal to "cardiB".
+    // Then the beautifyPerson function is invoked. We log personA which is 'ben'.
+    // The if statement within evaluates to true so we reassign personB to person and personC to personB.
+    // We log personC (cardiB). Then we reassign personC to personA. We log personB('cardiB').
+    // Thd function has finished. We log personC('paul')
   },
 
   exerciseB() {
@@ -93,7 +87,20 @@ const scope = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // We declare number and assign it equal to 75. 
+    // We declare numberFunction()
+    // We invoke numberFunction(). function newNumber() is hoisted to the top of the function.
+    // We declare a functionally scoped variable number and assign it to 28.
+    // Our conditional looks up the scope chain for number and finds the functionally scoped var number. 
+    // the if condition evaluates to true so we declare a block scope var number and assign it equal to 28.
+    // We log number in the function scope (75).
+    // we declare function newNumber().
+    // we invoke function newNumber().
+    // The intepreter looks up the scope chain for a number var and finds it in the parent function. 
+    // We reassign number (in the parent function) equal to 64.
+    // We log number (64).
+    // The function finishes and we log number again. We grab the functionally scoped number so it is 64 again.
+    // We then log the globally scoped number which is still 30.
   },
 
   exerciseC() {
@@ -123,11 +130,27 @@ const scope = {
 
     // Log D: greeting
 
-    const result = 'REPLACE WITH YOUR RESULT HERE';
+    const result = [
+      {'A': 'Yo'},
+      {'B': 'Hey'},
+      {'C': 'Hey'},
+      {'D': 'Hello'}
+    ];
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // We declare global var greeting and assign it to 'Hello'
+    // We declare function greetingFunction()
+    // We invoke greetingFunction()
+    // function newPhrase() is hoisted to the top of the function.
+    // We declare functionally scoped var greeting and assign it to 'Yo'
+    // The conditional evaluates to true so we declare block scoped var greeting and assign it to 'Howdy'
+    // We log greeting ('yo').
+    // We declare function newPhase().
+    // We invoke newPhrase().
+    // We reassign functionally scoped greeting to 'hey'. We log greeting ('hey').
+    // newPhrase() finishes and we log greeting again ('hey').
+    // greetingFunction() finishes and we log greeting again. This time it is the global var which is still 'hello'.  
   },
 
   exerciseD() {
@@ -166,7 +189,18 @@ const scope = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // We declare globally scoped var greeting and assign it to 'howdy'.
+    // We declare const greetingGenerator and set it equal to a function.
+    // We invoke greetingGenerator()
+    // We set functionally scoped greeting equal to 'hi'.
+    // Our conditional looks to our functionally scoped greeting and evaluates to true so we 
+    // declare and assign block scoped greeting 'hello'.
+    // We declare const newGreeting and assign it to a function.
+    // We invoke newGreeting().  
+    // We reassign our functionally scoped greeting var to 'welcome' then log greeting ('welcome')
+    // NewGretting() finished and we log our functionally scope greeting var again ('welcome)
+    // greetingGenerator() finishes and we log our globally scoped greeting ('howdy')
+
   },
 
   exerciseE() {
@@ -195,15 +229,24 @@ const scope = {
     // Log D: name
 
     const result =  [
+      {'C': 'Brittany'},
       {'A': 'Nathaniel'},
       {'B': 'Nathaniel'},
-      {'C': 'Brittany'},
       {'D': 'Brittany'}
     ];
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // First we declare a global var name and assigning it to be equal to "Brittany"
+    // Then we delcare function sayName()
+    // Then we logC name ("brittany")
+    // Then we invoke sayName()
+    // In the function we declare functionally scoped name and assign it to 'Pam'.
+    // The first conditional evaluates to true so we reassign the functionally scoped name to 'Nathaniel'.
+    // Then we have another conditional that evaulates to true so we declare a block scoped var name and assign it to 'brittany'.
+    // Our second conditional finishes and we log name ('Nathaniel').
+    // OUr first conditional finsihes and we log name which is still functionally scoped 'Nathaniel'.
+    // The our function ends and we log name again which is now globally scoped 'Brittany'.
   },
 
   exerciseF() {
@@ -244,7 +287,17 @@ const scope = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // First we declare var dog and assign it to 'spot'
+    // Then we declare function petDog()
+    // Then we invoke petDog()
+    // Inside the function we log dog which will return the global var ('Spot')
+    // Then we have a conditional that evaluates to true so we set block scoped var dog to 'Fluffy'
+    // Then we declare function rollOver()
+    // Then we invoke rollOver()
+    // Then we log dog again and it's still "spot" because there aren't any functionally scoped dogs.
+    // Then we reassign dog to 'biscuit'.
+    // Then we log dog ('biscuit').
+    // The remaining dog logs are also biscuit as all of them still refer to the globally scored dog var. 
   },
 
   exerciseG() {
@@ -271,7 +324,7 @@ const scope = {
     // Log D: fruit
 
     const result = [
-      {'A': undefined},
+      {'A': ReferenceError},
       {'B': 'mango'},
       {'C': 'mango'},
       {'D': 'apple'}
@@ -279,7 +332,19 @@ const scope = {
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // First we declare globally scoped var fruit and assign it equal to 'apple'.
+    // Then we declare function eatFruit().
+    // Then we invoke eatFruit()
+    // Our first conditional evaluates to true so we declare var fruit and assign it to 'mango'.
+    // This var is hoisting to the top of our function and it's value is not confined to the block because 
+    // var does not respect block scope. 
+    // Then we have another conditional that evaluates to true so we log fruit.
+    // This produces a reference error due to the Temporal Deadzone. const fruit does not hoist and it cannot be 
+    // accessed before it is declared. This reference error prevents our log from moving up the scope chain and finding 'mango'.
+    // After the log we declare block scoped fruit and assign it to 'strawberry'.
+    // Then our second if statement finishes and we log fruit again which is functionally scoped 'mango'.
+    // Then our first if statement finished and we log fruit which again is functionally scored 'mango'.
+    // Finally our function finishes and we log fruit one last time and it is equal to our globally scoped fruit ('apple').
   },
 
   exerciseH() {
@@ -317,15 +382,16 @@ const scope = {
 
     const result = [
       {'A': 4},
-      {'B': 9},
-      {'C': 4},
       {'D': 9},
-      {'E': 10}
+      {'E': 10},
+      {'B': 9},
+      {'C': 4}
     ];
     return result;
 
     // Annotation:
-    // Write your annotation here as a comment
+    // First we declare num and assign it to equal 6. 
+    //
   },
 
   exerciseI() {
@@ -401,9 +467,9 @@ const scope = {
 
     const result = [
       {'A': 'ketchup sandwhich'},
+      {'D': 'gouda'},
       {'B': undefined},
       {'C': 'not a mediocre sandwhich'},
-      {'D': 'gouda'},
       {'E': 'not a mediocre sandwhich'},
       {'F': 'National Treasure'}
     ];
@@ -537,11 +603,11 @@ const scope = {
     // Log F: instructor
 
     const result = [
-      {'A': 'Pam'},
-      {'B': 'Pam'},
       {'C': 'Louisa'},
       {'D': 'Louisa'},
       {'E': 'Pam'},
+      {'A': 'Pam'},
+      {'B': 'Pam'},
       {'F': 'Louisa'}
     ];
     return result;
@@ -563,8 +629,8 @@ const scope = {
     // Log C: shoe
 
     const result = [
-      {'A': undefined},
       {'B': 'flipflop'},
+      {'A': undefined}
       {'C': 'flipflop'}
     ];
     return result;

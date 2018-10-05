@@ -204,9 +204,13 @@ const classPrompts = {
     // }
 
     const result = classrooms.reduce( (obj, classroom) => {
-      (!obj[classroom.program]) ? obj[classroom.program] = classroom.capacity : obj[classroom.program] += classroom.capacity;
+      if(classroom.program === 'FE') {
+        obj.feCapacity += classroom.capacity 
+      } else {
+        obj.beCapacity += classroom.capacity;
+      }
       return obj;
-    }, {});
+    }, {feCapacity: 0, beCapacity: 0});
     return result;
 
     // Annotation:
@@ -381,7 +385,6 @@ const piePrompts = {
     //   cinnamon: 50,
     //   sugar: 100
     // }
-
     const result = (function() {
       const neededPies = pie.desiredInventoryCount - pie.inventoryCount;
       return {cinnamon: 2 * neededPies, sugar: 4 * neededPies}
@@ -421,7 +424,11 @@ const clubPrompts = {
 
     const result = clubs.reduce( (obj, club) => {
       club.members.forEach( (member) => {
-        (!obj[member]) ? obj[member] = [club.club] : obj[member].push(club.club)
+       if (!obj[member]) {
+         obj[member] = [club.club]
+        } else {
+          obj[member].push(club.club)
+        }
       })
       return obj;
     }, {});
@@ -463,11 +470,11 @@ const bossPrompts = {
     const result = keys.map( (boss) => {
       const loyalty = sidekicks.reduce( (sum, sidekick) => {
           if (sidekick.boss === bosses[boss].name) {
-            sum += sidekick.loyaltyToBoss
+            sum += sidekick.loyaltyToBoss;
           }
           return sum;
       }, 0)
-      return {bossName: bosses[boss].name, sidekickLoyalty: loyalty}
+      return {bossName: bosses[boss].name, sidekickLoyalty: loyalty};
     });
 
     return result;
@@ -600,7 +607,11 @@ const astronomyPrompts = {
     // }
 
     const result = stars.reduce( (obj, star) => {
-      (!obj[star.color]) ? obj[star.color] = [star] : obj[star.color].push(star);
+      if (!obj[star.color]) {
+        obj[star.color] = [star]
+       } else {
+        obj[star.color].push(star);
+       }
       return obj;
     }, {});
     return result;

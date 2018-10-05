@@ -143,7 +143,7 @@ const context = {
     return result;
 
     // Annotation: 
-    // Write your annotation here as a comment
+    // ES5 syntax with the function in the function loses 
   },
 
   exerciseH() {
@@ -180,11 +180,11 @@ const context = {
     }, poets)
 
     // What is the value of `this` that gets returned on each iteration of poets.map()?
-    const result = 'context';
+    const result = 'poets';
     return result;
 
     // Annotation: 
-    // Write your annotation here as a comment. Annotation should include explanation regarding the second argument of `poets` that is being passed
+    // this is the poets array because the final arg passed in to map specifies this. And in this case, this is set to poets. 
   },
 
   exerciseJ() {
