@@ -324,7 +324,7 @@ const scope = {
     // Log D: fruit
 
     const result = [
-      {'A': 'reference error',
+      {'A': 'reference error'},
       {'B': 'mango'},
       {'C': 'mango'},
       {'D': 'apple'}
@@ -630,7 +630,7 @@ const scope = {
 
     const result = [
       {'B': 'flipflop'},
-      {'A': undefined},
+      {'A': 'undefined'},
       {'C': 'flipflop'}
     ];
     return result;
