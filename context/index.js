@@ -16,7 +16,7 @@ const context = {
 
 
     // What is the value of `this` when we call ship.fly()?
-    const result = 'ship';
+    const result = 'instance of ship';
     return result;
 
     // Annotation:
@@ -32,7 +32,7 @@ const context = {
     }
     
     // What is the value of `this` when we call fn()?
-    const result = 'context';
+    const result = 'global window object';
     return result;
 
     // Annotation:
@@ -72,7 +72,7 @@ const context = {
 
 
     // What is the value of `this` when we call dog.getBreed()?
-    const result = 'context';
+    const result = 'global window object';
     return result;
 
     // Annotation: 
@@ -88,7 +88,7 @@ const context = {
 
 
     // What is the value of `this` when we call fn()?
-    const result = 'context';
+    const result = 'global window object';
     return result;
 
     // Annotation: 
@@ -111,7 +111,7 @@ const context = {
     const storm = new Hero('Ororo', 'weather control', true);
 
     // What is the value of `this` when we call storm.identifyHero()?
-    const result = 'storm';
+    const result = 'instance of Hero';
     return result;
 
     // Annotation: 
@@ -139,7 +139,7 @@ const context = {
 
 
     // What is the value of `this` when we call monopoly.restart()?
-    const result = 'context';
+    const result = 'global window object';
     return result;
 
     // Annotation: 
@@ -193,7 +193,7 @@ const context = {
     });
 
     // What is the value of `this` when a user clicks on our #btn element and the callback is triggered?
-    const result = 'context';
+    const result = 'global window object';
     return result;
 
     // Annotation: 

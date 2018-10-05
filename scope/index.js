@@ -324,7 +324,7 @@ const scope = {
     // Log D: fruit
 
     const result = [
-      {'A': ReferenceError},
+      {'A': 'reference error',
       {'B': 'mango'},
       {'C': 'mango'},
       {'D': 'apple'}
@@ -466,11 +466,11 @@ const scope = {
     // Log F: amandaBynes
 
     const result = [
-      {'A': 'ketchup sandwhich'},
+      {'A': 'ketchup sandwich'},
       {'D': 'gouda'},
       {'B': undefined},
-      {'C': 'not a mediocre sandwhich'},
-      {'E': 'not a mediocre sandwhich'},
+      {'C': 'not a mediocre sandwich'},
+      {'E': 'not a mediocre sandwich'},
       {'F': 'National Treasure'}
     ];
     return result;
@@ -561,7 +561,7 @@ const scope = {
     const result = [
       {'A': 5},
       {'B': 6},
-      {'C': ReferenceError},
+      {'C': 'reference error'},
       {'D': 6}
     ];
     return result;
@@ -630,7 +630,7 @@ const scope = {
 
     const result = [
       {'B': 'flipflop'},
-      {'A': undefined}
+      {'A': undefined},
       {'C': 'flipflop'}
     ];
     return result;

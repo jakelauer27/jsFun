@@ -260,7 +260,7 @@ const cakePrompts = {
         }
       })
       return arr;
-    }, 0);
+    }, []);
     return result;
 
     // Annotation:
@@ -346,7 +346,7 @@ const cakePrompts = {
     // },
 
       const result = cakes.filter( (cake) => {
-        return cakes.inStock;
+        return cakes.inStock > 0;
       })
       return result;
 
@@ -537,13 +537,6 @@ const kittyPrompts = {
     //   color: 'orange'
     // },
     // ...etc]
-<<<<<<< HEAD
-    const result = kitties.filter( (kitten) => kitten.age > 2)
-
-    return result;
-  
-=======
->>>>>>> 9aa4410885adf164f86fa8167c072fcd5bd4fb0c
   }
 };
 
