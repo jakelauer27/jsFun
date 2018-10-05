@@ -561,7 +561,7 @@ const scope = {
     const result = [
       {'A': 5},
       {'B': 6},
-      {'C': undefined},
+      {'C': ReferenceError},
       {'D': 6}
     ];
     return result;

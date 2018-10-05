@@ -72,7 +72,7 @@ const turingPrompts = {
     const result = instructors.reduce( (obj, instructor) => {
       const subjects = instructor.teaches.reduce( (arr, subject) => {
         cohorts.forEach( (cohort) => {
-         if (cohort.curriculum.indexOf(subject) !== -1 && arr.indexOf (cohort.module) === -1) {
+         if (cohort.curriculum.includes(subject) && !arr.includes(cohort.module)) {
           arr.push(cohort.module);
          }
         })
@@ -104,7 +104,7 @@ const turingPrompts = {
     const result = cohorts.reduce( (obj, cohort) => {
       cohort.curriculum.forEach( (subject) => {
         obj[subject] = instructors.filter( (instructor) => {
-          return instructor.teaches.indexOf(subject) !== -1
+          return instructor.teaches.includes(subject);
         }).map( (teacher) => teacher.name)
       })
       return obj;
@@ -309,7 +309,7 @@ const cakePrompts = {
     // ]
 
     const result = cakes.map( (cake) => {
-      return {'flavor': cake.cakeFlavor, 'inStock': cake.inStock }
+      return {flavor: cake.cakeFlavor, inStock: cake.inStock }
     }) ;
     return result;
 
@@ -425,10 +425,9 @@ const clubPrompts = {
     const result = clubs.reduce( (obj, club) => {
       club.members.forEach( (member) => {
        if (!obj[member]) {
-         obj[member] = [club.club]
-        } else {
-          obj[member].push(club.club)
-        }
+         obj[member] = []
+        } 
+       obj[member].push(club.club)
       })
       return obj;
     }, {});
