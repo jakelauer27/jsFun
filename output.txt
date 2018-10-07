@@ -1,0 +1,186 @@
+
+> jsFun@1.0.0 test /Users/jakelauer/Documents/mod-two-projects/jsFun
+> ./node_modules/mocha/bin/mocha test/ --reporter dot --require mocha-clean
+
+
+
+  !․,․․․․․․,․․․․!․․!․․!!!․․․․․․․!!․․․․․․․․!․․․․!․
+
+  35 passing (28ms)
+  2 pending
+  10 failing
+
+  1) CONTEXT
+       exerciseA:
+
+      AssertionError: expected 'instance of ship' to equal 'global window object'
+      + expected - actual
+
+      -instance of ship
+      +global window object
+      
+      at Context.it (test/context-test.js:7:23)
+
+  2) PROTOTYPES
+       Club Prompts
+         membersBelongingToClubs:
+     AssertionError: expected { Object (Louisa, Pam, ...) } to deeply equal undefined
+      at Context.it (test/prototype-test.js:44:30)
+
+  3) PROTOTYPES
+       Class Prompts
+         totalCapacities:
+
+      AssertionError: expected { feCapacity: 110, beCapacity: 96 } to deeply equal { FE: 110, BE: 96 }
+      + expected - actual
+
+       {
+      -  "beCapacity": 96
+      -  "feCapacity": 110
+      +  "BE": 96
+      +  "FE": 110
+       }
+      
+      at Context.it (test/prototype-test.js:65:30)
+
+  4) PROTOTYPES
+       Kitty Prompts
+         orangeKittyNames:
+     ReferenceError: kitties is not defined
+      at Object.orangeKittyNames (prototypes/index.js:507:20)
+      at Context.it (test/prototype-test.js:86:35)
+
+  5) PROTOTYPES
+       Kitty Prompts
+         sortByAge:
+     ReferenceError: kitties is not defined
+      at Object.sortByAge (prototypes/index.js:518:20)
+      at Context.it (test/prototype-test.js:91:35)
+
+  6) PROTOTYPES
+       Kitty Prompts
+         growUp:
+     AssertionError: expected undefined to deeply equal [ Array(4) ]
+      at Context.it (test/prototype-test.js:97:30)
+
+  7) PROTOTYPES
+       Cake Prompts
+         totalInventory:
+     AssertionError: expected '0[object Object][object Object][object Object][object Object][object Object][object Object]' to deeply equal 59
+      at Context.it (test/prototype-test.js:146:30)
+
+  8) PROTOTYPES
+       Cake Prompts
+         onlyInStock:
+
+      AssertionError: expected [] to deeply equal [ Array(4) ]
+      + expected - actual
+
+      -[]
+      +[
+      +  {
+      +    "cakeFlavor": "dark chocolate"
+      +    "filling": [null]
+      +    "frosting": "dark chocolate ganache"
+      +    "inStock": 15
+      +    "toppings": [
+      +      "dutch process cocoa"
+      +      "toasted sugar"
+      +      "smoked sea salt"
+      +    ]
+      +  }
+      +  {
+      +    "cakeFlavor": "yellow"
+      +    "filling": "citrus glaze"
+      +    "frosting": "chantilly cream"
+      +    "inStock": 14
+      +    "toppings": [
+      +      "berries"
+      +      "edible flowers"
+      +    ]
+      +  }
+      +  {
+      +    "cakeFlavor": "butter rum"
+      +    "filling": "ginger cardamom swirl"
+      +    "frosting": "spiced rum glaze"
+      +    "inStock": 9
+      +    "toppings": [
+      +      "crystallized ginger"
+      +      "toasted sugar"
+      +    ]
+      +  }
+      +  {
+      +    "cakeFlavor": "vanilla"
+      +    "filling": "St Germaine"
+      +    "frosting": "whipped cream"
+      +    "inStock": 21
+      +    "toppings": [
+      +      "smoked sea salt"
+      +      "crystallized ginger"
+      +      "berries"
+      +    ]
+      +  }
+      +]
+      
+      at Context.it (test/prototype-test.js:151:30)
+
+  9) SCOPE
+       exerciseI:
+
+      AssertionError: expected [ Array(5) ] to deeply equal [ Array(8) ]
+      + expected - actual
+
+         {
+           "D": 80
+         }
+         {
+      +    "A": 55
+      +  }
+      +  {
+      +    "B": 0
+      +  }
+      +  {
+      +    "C": 55
+      +  }
+      +  {
+           "E": 55
+         }
+       ]
+      
+      at Context.it (test/scope-test.js:89:28)
+
+  10) SCOPE
+       exerciseN:
+
+      AssertionError: expected [ Array(6) ] to deeply equal [ Array(6) ]
+      + expected - actual
+
+       [
+         {
+      -    "C": "Louisa"
+      +    "E": "Pam"
+         }
+         {
+      -    "D": "Louisa"
+      +    "A": "Pam"
+         }
+         {
+      -    "E": "Pam"
+      +    "B": "Pam"
+         }
+         {
+      -    "A": "Pam"
+      +    "C": "Louisa"
+         }
+         {
+      -    "B": "Pam"
+      +    "D": "Louisa"
+         }
+         {
+           "F": "Louisa"
+         }
+      
+      at Context.it (test/scope-test.js:142:28)
+
+
+
