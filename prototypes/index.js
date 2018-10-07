@@ -1,6 +1,7 @@
 const { instructors, cohorts } = require('./datasets/turing');
 const { constellations, stars } = require('./datasets/astronomy');
 const { cakes } = require('./datasets/cakes');
+const { kitties } = require('./datasets/kitties')
 const { pie } = require('./datasets/pie');
 const { clubs } = require('./datasets/clubs');
 const { classrooms } = require('./datasets/classrooms');
@@ -323,7 +324,7 @@ const cakePrompts = {
     // 59
 
     const result = cakes.reduce( (sum, cake) => {
-      sum += cake;
+      sum += cake.inStock;
       return sum;
     }, 0);
     return result;
@@ -346,7 +347,7 @@ const cakePrompts = {
     // },
 
       const result = cakes.filter( (cake) => {
-        return cakes.inStock > 0;
+        return cake.inStock > 0;
       })
       return result;
 
@@ -500,29 +501,6 @@ const bossPrompts = {
 
 // DATASET: kitties from ./datasets/kitties
 const kittyPrompts = {
-  orangeKittyNames() {
-    // Return an array of just the names of kitties who are orange e.g.
-    // ['Tiger', 'Snickers']
-
-    const result = kitties.filter( (kitten) => kitten.color === 'orange'
-    ).map( (kitten) => kitten.name);
-    return result;
-
-    // Annotation:
-    // Write your annotation here as a comment
-  },
-
-  sortByAge() {
-    // Sort the kitties by their age
-
-    const result = kitties.sort( (a, b) => {
-      return a.age < b.age;
-    });
-    return result;
-
-    // Annotation:
-    // Write your annotation here as a comment
-  },
 
   growUp() {
     // Return an array of kitties who have all grown up by 2 years e.g.
@@ -537,6 +515,43 @@ const kittyPrompts = {
     //   color: 'orange'
     // },
     // ...etc]
+
+    const result = kitties.map( (cat) => {
+      cat.age += 2;
+      return cat;
+    })
+
+    return result;
+  },
+
+  orangeKittyNames() {
+    // Return an array of just the names of kitties who are orange e.g.
+    // ['Tiger', 'Snickers']
+
+    const result = kitties.filter( (kitten) => kitten.color === 'orange'
+    ).map( (kitten) => kitten.name);
+    return result;
+
+    // Annotation:
+    // Write your annotation here as a comment
+  },
+
+
+
+  sortByAge() {
+    // Sort the kitties by their age
+    kitties.map( (cat) => {
+      cat.age -= 2;
+      return cat;
+    })
+
+    const result = kitties.sort( (a, b) => {
+      return a.age < b.age;
+    });
+    return result;
+
+    // Annotation:
+    // Write your annotation here as a comment
   }
 };
 

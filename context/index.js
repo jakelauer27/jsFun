@@ -16,7 +16,7 @@ const context = {
 
 
     // What is the value of `this` when we call ship.fly()?
-    const result = 'instance of ship';
+    const result = 'global window object';
     return result;
 
     // Annotation:
@@ -51,7 +51,7 @@ const context = {
     el.addEventListener("click", car.getInfo);
 
     // What is the value of `this` when a user clicks on our element and car.getInfo() is triggered?
-    const result = 'car';
+    const result = 'el';
     return result;
 
     // Annotation: 
@@ -193,7 +193,7 @@ const context = {
     });
 
     // What is the value of `this` when a user clicks on our #btn element and the callback is triggered?
-    const result = 'global window object';
+    const result = '#btn';
     return result;
 
     // Annotation: 

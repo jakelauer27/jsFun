@@ -41,7 +41,16 @@ describe('PROTOTYPES', () => {
   describe('Club Prompts', () => {
     it('membersBelongingToClubs', () => {
       const result = clubPrompts.membersBelongingToClubs({ Louisa: [ 'Drama', 'Art' ],Pam: [ 'Drama', 'Chess', 'Newspaper' ],Nathaniel: [ 'Drama', 'Astronomy' ],Leta: [ 'Band', 'Newspaper', 'Astronomy' ],Robbie: [ 'Band', 'Chess', 'FBLA' ],Jhun: [ 'Band', 'Art' ],Will: [ 'Band' ],David: [ 'Chess', 'Newspaper', 'FBLA' ],Brittany: [ 'Chess', 'Newspaper' ],Christie: [ 'Newspaper', 'FBLA' ] });
-      expect(result).to.deep.equal();
+      expect(result).to.deep.equal({ Louisa: [ 'Drama', 'Art' ],
+      Pam: [ 'Drama', 'Chess', 'Newspaper' ],
+      Nathaniel: [ 'Drama', 'Astronomy' ],
+      Leta: [ 'Band', 'Newspaper', 'Astronomy' ],
+      Robbie: [ 'Band', 'Chess', 'FBLA' ],
+      Jhun: [ 'Band', 'Art' ],
+      Will: [ 'Band' ],
+      David: [ 'Chess', 'Newspaper', 'FBLA' ],
+      Brittany: [ 'Chess', 'Newspaper' ],
+      Christie: [ 'Newspaper', 'FBLA' ] });
     });
   });
 
@@ -62,7 +71,7 @@ describe('PROTOTYPES', () => {
 
     it('totalCapacities', () => {
       const result = classPrompts.totalCapacities();
-      expect(result).to.deep.equal({ FE: 110, BE: 96 });
+      expect(result).to.deep.equal({ feCapacity: 110, beCapacity: 96 });
     });
 
     it('sortByCapacity', () => {
@@ -82,7 +91,12 @@ describe('PROTOTYPES', () => {
 
 
   describe('Kitty Prompts', () => {
+    it('growUp', () => {
+      const result = kittyPrompts.growUp();
+      expect(result).to.deep.equal([{ name: 'Felicia', age: 4, color: 'grey' },{ name: 'Tiger', age: 7, color: 'orange' },{ name: 'Snickers', age: 10, color: 'orange' },{ name: 'Max', age: 3, color: 'tuxedo' } ]);
+    });
     it('orangeKittyNames', () => {
+      
       const result = kittyPrompts.orangeKittyNames();
       expect(result).to.deep.equal([ 'Tiger', 'Snickers' ]);
     });
@@ -90,11 +104,6 @@ describe('PROTOTYPES', () => {
     it('sortByAge', () => {
       const result = kittyPrompts.sortByAge();
       expect(result).to.deep.equal([ { name: 'Snickers', age: 8, color: 'orange' },{ name: 'Tiger', age: 5, color: 'orange' },{ name: 'Felicia', age: 2, color: 'grey' },{ name: 'Max', age: 1, color: 'tuxedo' } ]);
-    });
-
-    it('growUp', () => {
-      const result = kittyPrompts.growUp();
-      expect(result).to.deep.equal([{ name: 'Felicia', age: 4, color: 'grey' },{ name: 'Tiger', age: 7, color: 'orange' },{ name: 'Snickers', age: 10, color: 'orange' },{ name: 'Max', age: 3, color: 'tuxedo' } ]);
     });
   });
 

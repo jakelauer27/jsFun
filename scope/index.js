@@ -423,6 +423,9 @@ const scope = {
       {'B': 0},
       {'C': 75},
       {'D': 80},
+      {'A': 55 },
+      {'B': 0 },
+      {'C': 55 },
       {'E': 55}
     ];
     return result;
@@ -603,11 +606,11 @@ const scope = {
     // Log F: instructor
 
     const result = [
-      {'C': 'Louisa'},
-      {'D': 'Louisa'},
       {'E': 'Pam'},
       {'A': 'Pam'},
       {'B': 'Pam'},
+      {'C': 'Louisa'},
+      {'D': 'Louisa'},
       {'F': 'Louisa'}
     ];
     return result;
